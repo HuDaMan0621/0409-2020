@@ -1,27 +1,12 @@
-class Hero():
-    
-    def __init__(self, name, secret_identity, power, health):
-        self.name = name
-        self.secret_identity = secret_identity
-        self.power = power
-        self.health = health
+from character import Character
+class Hero(Character):
+    def receive_damage(self, how_much):
+        self.health -= how_much
+        if self.health <=0:
+            self.health = 5
 
-    def __repr__(self):
-        return f'{self.name}has power {self.power}'
+  
 
-    def make_entrance(self):
-        print(f'{self.name} has the power to fly')
-    def recharge(self):
-        self.health += 10
-        print(f'{self.name} increeeeeaaaased the health {self.health}')
-    def status(self):
-        if self.health < 50:
-            print(f'{self.name}has health {self.health} and needs to recharge')
-        elif self.health > 150:
-            print(f'{self.name}has health {self.health} and can perform normal duties')
-        else:
-            print(f'{self.name}has health {self.health} and feeling great')
-im = Hero ('Iron Man', 'Tony Stark', 20, 100)
 # # hulk = Hero('Huuuulk', 'Dr Bruce Banner', 50, 500, 20)
 
 # # thanos = Villain('Thanos', 'Thanos', 30, 5000, 5)
